@@ -5,21 +5,21 @@ import pandas as pd
 ### Load data ###
 
 # Seeds
-seeds_m = pd.read_csv('data_2024/MNCAATourneySeeds.csv').query('Season == 2024').reset_index(drop=True)
-seeds_w = pd.read_csv('data_2024/WNCAATourneySeeds.csv').query('Season == 2024').reset_index(drop=True)
+seeds_m = pd.read_csv('data_2023/MNCAATourneySeeds.csv').query('Season == 2023').reset_index(drop=True)
+seeds_w = pd.read_csv('data_2023/WNCAATourneySeeds.csv').query('Season == 2023').reset_index(drop=True)
 
 # Regular season results
-box_scores_m = pd.read_csv('data_2024/MRegularSeasonDetailedResults.csv').query('Season == 2024').reset_index(drop=True)
-box_scores_w = pd.read_csv('data_2024/WRegularSeasonDetailedResults.csv').query('Season == 2024').reset_index(drop=True)
+box_scores_m = pd.read_csv('data_2023/MRegularSeasonDetailedResults.csv').query('Season == 2023').reset_index(drop=True)
+box_scores_w = pd.read_csv('data_2023/WRegularSeasonDetailedResults.csv').query('Season == 2023').reset_index(drop=True)
 
 # Conferences - only used in Women's model
-team_conf_w = pd.read_csv('data_2024/WTeamConferences.csv')
+team_conf_w = pd.read_csv('data_2023/WTeamConferences.csv')
 
 # Public rankings - used only in Men's model
-ratings_all = pd.read_csv('data_2024/MMasseyOrdinals_thru_Season2024_Day128.csv')
+ratings_all = pd.read_csv('data_2023/MMasseyOrdinals_thru_Season2023_Day128.csv')
 
 # Submission file
-submission_file_start = pd.read_csv('data_2024/SampleSubmission2023.csv')
+submission_file_start = pd.read_csv('data_2023/SampleSubmission2023.csv')
 
 
 ### Build symmetric data frames
@@ -185,5 +185,5 @@ prediction_data_w = (sub_w
  .set_index('ID')
 )
 
-prediction_data_m.to_csv('input/prediction_data_m_2024.csv')
-prediction_data_w.to_csv('input/prediction_data_w_2024.csv')
+prediction_data_m.to_csv('input/prediction_data_m_2023.csv')
+prediction_data_w.to_csv('input/prediction_data_w_2023.csv')
